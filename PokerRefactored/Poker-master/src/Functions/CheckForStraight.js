@@ -44,7 +44,6 @@ export default function CheckForStraight(tempAlterableHand, cardRank){
             downStraightedCount = 1
       }
     }
-    console.log(straightedCards)
     if(isStraightedWithWheel){
       return wheeledStraight
     }else if(isStraighted){
