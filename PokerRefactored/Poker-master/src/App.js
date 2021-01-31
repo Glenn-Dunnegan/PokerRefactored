@@ -128,6 +128,7 @@ class App extends Component{
     }
 
     consoleTest(){
+        // console logs returned value of MakeEvaluable Function with given arguments
         console.log(MakeEvaluable(this.state.board, this.state.hand).evaluableHand)
     }
 
