@@ -11,7 +11,25 @@ body{
 }
 .boardWindow{
     height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 .handWindow{
     height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.cardImgHolder{
+    width: 125px;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 8%;
+    display: flex;
+    justify-content: center;
+}
+.cardImg{
+    height: 200px;
+    align-self: center;
 }

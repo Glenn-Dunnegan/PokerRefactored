@@ -157,7 +157,7 @@ class App extends Component{
                     <button onClick = {() => this.turn()}>Turn</button>
                     <button onClick = {() => this.river()}>River</button>
                 </div>
-                <div><button onClick = {() => this.evaluateHand()}>Evaluate Hand</button></div>
+                <div><button onClick = {() => this.evaluateHand()}>What is my hand?</button></div>
                 <div><button onClick = {() => this.consoleTest()}>Console Test</button></div>
                 <div>{this.state.handMessage}</div>
             </div>
