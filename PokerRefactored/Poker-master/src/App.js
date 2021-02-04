@@ -123,7 +123,7 @@ class App extends Component{
                 finalPlayerHand: evaluation.finalPlayerHand,
                 playerHandRank: evaluation.playerHandRank,
                 handMessage: evaluation.handMessage
-        }
+            }
         })
     }
 
@@ -150,16 +150,16 @@ class App extends Component{
                     <div className = 'handWindow'>{newHand}</div>
                 </div>
                 <div className = 'basicButtons'>
-                    <button className = 'reset' onClick = {() => this.resetCards()}>Reset Cards</button>
+                    <button className = 'reset' style = {{color: 'red'}} onClick = {() => this.resetCards()}>Reset Cards</button>
                     <button onClick = {() => this.shuffleDeck()}>Shuffle</button>
                     <button onClick = {() => this.dealHand()}>Deal</button>
                     <button onClick = {() => this.flop()}>Flop</button>
                     <button onClick = {() => this.turn()}>Turn</button>
                     <button onClick = {() => this.river()}>River</button>
                 </div>
-                <div><button onClick = {() => this.evaluateHand()}>What is my hand?</button></div>
+                <div><button className = 'evalBtn' onClick = {() => this.evaluateHand()}>What is my hand?</button></div>
                 <div><button onClick = {() => this.consoleTest()}>Console Test</button></div>
-                <div>{this.state.handMessage}</div>
+                <div className = 'handEvaluation'>{this.state.handMessage}</div>
             </div>
         )
     }
