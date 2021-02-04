@@ -1,0 +1,17 @@
+.reset{
+    color: red;
+}
+body{
+    background-color: rgb(23, 102, 23);
+    text-align: center;
+}
+.cardWindow{
+    height: 450px;
+    margin-top: 15vh;
+}
+.boardWindow{
+    height: 200px;
+}
+.handWindow{
+    height: 200px;
+}

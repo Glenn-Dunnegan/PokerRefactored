@@ -144,17 +144,19 @@ class App extends Component{
             )
           })
         return(
-            <div>
-                <div>{newHand}</div>
-                <div>
-                    <button onClick = {() => this.resetCards()}>Reset Cards</button>
+            <div className = 'mainContent'>
+                <div className = 'cardWindow'>
+                    <div className = 'boardWindow'>{newBoard}</div>
+                    <div className = 'handWindow'>{newHand}</div>
+                </div>
+                <div className = 'basicButtons'>
+                    <button className = 'reset' onClick = {() => this.resetCards()}>Reset Cards</button>
                     <button onClick = {() => this.shuffleDeck()}>Shuffle</button>
                     <button onClick = {() => this.dealHand()}>Deal</button>
                     <button onClick = {() => this.flop()}>Flop</button>
                     <button onClick = {() => this.turn()}>Turn</button>
                     <button onClick = {() => this.river()}>River</button>
                 </div>
-                <div>{newBoard}</div>
                 <div><button onClick = {() => this.evaluateHand()}>Evaluate Hand</button></div>
                 <div><button onClick = {() => this.consoleTest()}>Console Test</button></div>
                 <div>{this.state.handMessage}</div>
