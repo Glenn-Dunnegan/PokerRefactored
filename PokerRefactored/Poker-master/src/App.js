@@ -40,7 +40,11 @@ class App extends Component{
           playerHandRank:'',
           evaluableHand: [],
           finalPlayerHand: [],
-          handMessage: ``
+          handMessage: ``,
+          dealt: false,
+          flopped: false,
+          turned: false,
+          rivered: false
     }
 
     resetCards(){
@@ -62,7 +66,8 @@ class App extends Component{
               `KC`,`KD`,`KH`,`KS`
             ],
             hand: [],
-            board: []
+            board: [],
+            dealt: false
           }
         })
         console.log(this.state.deck)
@@ -77,17 +82,18 @@ class App extends Component{
     }
 
     dealHand(){
-        const newHandandDealtFromDeck = Deal(this.state.deck)
+        const newHandandDealtFromDeck = Deal(this.state.deck, this.state.dealt)
         this.setState(()=>{
             return{
                 hand: newHandandDealtFromDeck.newHand,
-                deck: newHandandDealtFromDeck.dealtFromDeck
+                deck: newHandandDealtFromDeck.dealtFromDeck,
+                dealt: newHandandDealtFromDeck.dealt
             }
         })
     }
 
     flop(){
-        const newBoardAndDeck = Flop(this.state.board, this.state.deck)
+        const newBoardAndDeck = Flop(this.state.board, this.state.deck, this.state.dealt)
         this.setState(()=>{
             return{
                 board: newBoardAndDeck.board,
@@ -158,7 +164,6 @@ class App extends Component{
                     <button onClick = {() => this.river()}>River</button>
                 </div>
                 <div><button className = 'evalBtn' onClick = {() => this.evaluateHand()}>What is my hand?</button></div>
-                <div><button onClick = {() => this.consoleTest()}>Console Test</button></div>
                 <div className = 'handEvaluation'>{this.state.handMessage}</div>
             </div>
         )
