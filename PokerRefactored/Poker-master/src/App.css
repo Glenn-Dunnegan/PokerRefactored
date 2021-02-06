@@ -36,6 +36,22 @@ body{
 .cardImg{
     height: 200px;
 }
+.cardBackImg{
+    height: 230px;
+    width: 144px;
+    margin-right: -2px;
+    margin-bottom: -2px;
+}
+.cardBackImgHolder{
+    width: 127px;
+    height: 195px;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .handEvaluation{
     font-size: 25px;
     font-weight: 500;

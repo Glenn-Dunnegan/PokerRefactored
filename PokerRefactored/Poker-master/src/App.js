@@ -166,7 +166,12 @@ class App extends Component{
         return(
             <div className = 'mainContent'>
                 <div className = 'cardWindow'>
-                    <div className = 'boardWindow'>{newBoard} <img className = 'cardBackImg' src = {require (`./JPEG/cardBackRed.png`)} alt = ""></img></div>
+                    <div className = 'boardWindow'>
+                        {newBoard}
+                        <div className = 'cardBackImgHolder'>
+                            <img className = 'cardBackImg'src = {require (`./JPEG/cardBackRed.png`)} alt = ""></img>
+                        </div>
+                    </div>
                     <div className = 'handWindow'>{newHand}</div>
                 </div>
                 <div className = 'basicButtons'>
