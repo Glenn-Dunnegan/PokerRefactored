@@ -1,6 +1,6 @@
-export default function Deal(deck, dealt){
+export default function Deal(deck, dealt, hand){
     
-        const newHand = []
+        const newHand = hand
         const dealtFromDeck = deck    
         let i = 0
         let shiftTimes = 0
@@ -15,13 +15,13 @@ export default function Deal(deck, dealt){
             }
             console.log(dealtFromDeck)
         }
-            const newHandandDealtFromDeck = {
-                newHand: newHand,
-                dealtFromDeck: dealtFromDeck,
-                dealt: true
-            }
-            
-            return (
-                newHandandDealtFromDeck
-            )
+        const newHandandDealtFromDeck = {
+            newHand: newHand,
+            dealtFromDeck: dealtFromDeck,
+            dealt: true
+        }
+        
+        return (
+            newHandandDealtFromDeck
+        )
 }

@@ -85,7 +85,7 @@ class App extends Component{
     }
 
     dealHand(){
-        const newHandandDealtFromDeck = Deal(this.state.deck, this.state.dealt)
+        const newHandandDealtFromDeck = Deal(this.state.deck, this.state.dealt, this.state.hand)
         this.setState(()=>{
             return{
                 hand: newHandandDealtFromDeck.newHand,
