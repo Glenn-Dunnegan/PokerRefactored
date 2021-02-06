@@ -129,7 +129,6 @@ class App extends Component{
     }
 
     evaluateHand(){
-        
         if(this.state.dealt === true){
             const evaluation  = EvaluateHand(this.state.cardRank, this.state.handRanks, this.state.board, this.state.hand)
             this.setState(() => {
