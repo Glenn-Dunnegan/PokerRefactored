@@ -67,7 +67,10 @@ class App extends Component{
             ],
             hand: [],
             board: [],
-            dealt: false
+            dealt: false,
+            flopped: false,
+            turned: false,
+            rivered: false
           }
         })
         console.log(this.state.deck)
@@ -93,44 +96,56 @@ class App extends Component{
     }
 
     flop(){
-        const newBoardAndDeck = Flop(this.state.board, this.state.deck, this.state.dealt)
+        const newBoardAndDeck = Flop(this.state.board, this.state.deck, this.state.dealt, this.state.flopped)
         this.setState(()=>{
             return{
                 board: newBoardAndDeck.board,
-                deck: newBoardAndDeck.deck
+                deck: newBoardAndDeck.deck,
+                flopped: newBoardAndDeck.flopped
             }
         })
     }
 
     turn(){
-        const newBoardAndDeck = Turn(this.state.board, this.state.deck)
+        const newBoardAndDeck = Turn(this.state.board, this.state.deck, this.state.flopped, this.state.turned)
         this.setState(()=>{
             return{
                 board: newBoardAndDeck.board,
-                deck: newBoardAndDeck.deck
+                deck: newBoardAndDeck.deck,
+                turned: newBoardAndDeck.turned
             }
         })
     }
 
     river(){
-        const newBoardAndDeck = River(this.state.board, this.state.deck)
+        const newBoardAndDeck = River(this.state.board, this.state.deck, this.state.turned)
         this.setState(() => {
             return{
                 board: newBoardAndDeck.board,
-                deck: newBoardAndDeck.deck
+                deck: newBoardAndDeck.deck,
+                rivered: newBoardAndDeck.rivered
             }
         })
     }
 
     evaluateHand(){
-        const evaluation  = EvaluateHand(this.state.cardRank, this.state.handRanks, this.state.board, this.state.hand)
-        this.setState(() => {
-            return{
-                finalPlayerHand: evaluation.finalPlayerHand,
-                playerHandRank: evaluation.playerHandRank,
-                handMessage: evaluation.handMessage
-            }
-        })
+        
+        if(this.state.dealt === true){
+            const evaluation  = EvaluateHand(this.state.cardRank, this.state.handRanks, this.state.board, this.state.hand)
+            this.setState(() => {
+                return{
+                    finalPlayerHand: evaluation.finalPlayerHand,
+                    playerHandRank: evaluation.playerHandRank,
+                    handMessage: evaluation.handMessage
+                }
+            })
+        }else{
+            this.setState(() => {
+                return{
+                    handMessage: 'You need to at least be dealt a hand'
+                }
+            })
+        }
     }
 
     consoleTest(){

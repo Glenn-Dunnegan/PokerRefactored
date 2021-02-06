@@ -1,15 +1,17 @@
-export default function River(board, deck){
+export default function River(board, deck, turned, rivered){
       const newBoard = board
       const dealtFromDeck = deck
-      if(newBoard.length < 5){
+      if(newBoard.length < 5 && turned === true){
         newBoard.push(deck[0])
         dealtFromDeck.shift()
+        rivered = true
       }
       console.log(dealtFromDeck)
 
       const newBoardAndDeck = {
         board: newBoard,
-        deck: dealtFromDeck
+        deck: dealtFromDeck,
+        rivered: rivered
       }
 
       return (newBoardAndDeck)

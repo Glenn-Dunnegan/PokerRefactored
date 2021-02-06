@@ -1,6 +1,5 @@
-export default function Flop(board, deck, dealt){
+export default function Flop(board, deck, dealt, flopped){
 
-  
       const newBoard = board
       const dealtFromDeck = deck
       let i = 0
@@ -14,11 +13,13 @@ export default function Flop(board, deck, dealt){
           dealtFromDeck.shift()
           shiftTimes++
         }
+        flopped = true
         console.log(dealtFromDeck)
       }
         const newBoardAndDeck = {
           board: newBoard,
-          deck: dealtFromDeck
+          deck: dealtFromDeck,
+          flopped: flopped
         }
 
         return (newBoardAndDeck)
